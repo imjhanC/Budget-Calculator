@@ -1,16 +1,19 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
+
+
 public class Login{
-    Icon icon1 = new ImageIcon("C:\\Users\\cheng\\Documents\\Test\\test\\pngtree-vector-eye-icon-png-image_515473.jpg");
+    Icon originalIcon = new ImageIcon("C:\\Users\\cheng\\Documents\\Test\\test\\65000.png");
+    ImageIcon scaledIcon = getScaledIcon(originalIcon, 40, 40);
     JFrame frame = new JFrame("Login");
     JLabel userlabel = new JLabel("Username :");
     JLabel passlabel = new JLabel("Password :");
     JLabel userForgot = new JLabel("<html><u>Need Help/Forgot Password?</u></html>");
     JTextField usernameField = new JTextField("Your username here..."); 
     JTextField passwordField = new JTextField("Your password here..."); 
-    JButton eyeImg1 = new JButton(icon1);
-    JButton eyeImg2 = new JButton(icon1);
+    JButton eyeImg1 = new JButton(scaledIcon);
+    JButton eyeImg2 = new JButton(scaledIcon);
     JButton LoginBttn = new JButton("Login");
 
     public Login(){
@@ -87,6 +90,13 @@ public class Login{
         frame.setLocationRelativeTo(null);
         //frame.getContentPane().setBackground(new java.awt.Color(11, 13, 12));
     }
+
+    private ImageIcon getScaledIcon(Icon icon, int width, int height) { //Scale image to 40 x 40
+        Image image = ((ImageIcon) icon).getImage();
+        Image scaledImage = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new ImageIcon(scaledImage);
+    }
+
     public static void main(String[] args){
        new Login();
     }
