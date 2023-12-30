@@ -69,18 +69,6 @@ public class Login{
             }
         };
 
-        eyeImg2.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-                passwordField.setEchoChar((char) 0); // Show the actual characters
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                passwordField.setEchoChar('\u25CF'); // Show dots for characters
-            }
-        });
-
         usernameField.addFocusListener(focusAdapter);
         passwordField.addFocusListener(focusAdapter);
 
