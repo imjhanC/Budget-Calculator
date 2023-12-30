@@ -11,7 +11,7 @@ public class Login{
     JLabel passlabel = new JLabel("Password :");
     JLabel userForgot = new JLabel("<html><u>Need Help/Forgot Password?</u></html>");
     JTextField usernameField = new JTextField("Your username here..."); 
-    JTextField passwordField = new JTextField("Your password here..."); 
+    JPasswordField passwordField = new JPasswordField("Your password here..."); 
     JButton eyeImg1 = new JButton(scaledIcon);
     JButton eyeImg2 = new JButton(scaledIcon);
     JButton LoginBttn = new JButton("Login");
@@ -68,6 +68,18 @@ public class Login{
                 }
             }
         };
+
+        eyeImg2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                passwordField.setEchoChar((char) 0); // Show the actual characters
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                passwordField.setEchoChar('\u25CF'); // Show dots for characters
+            }
+        });
 
         usernameField.addFocusListener(focusAdapter);
         passwordField.addFocusListener(focusAdapter);
