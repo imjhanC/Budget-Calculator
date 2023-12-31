@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.awt.*;
 
 
-public class Login{
+public class LoginGUI{
     Icon originalIcon = new ImageIcon("C:\\Users\\cheng\\Documents\\Test\\test\\65000.png");
     ImageIcon scaledIcon = getScaledIcon(originalIcon, 40, 40);
     JFrame frame = new JFrame("Login");
@@ -16,7 +16,7 @@ public class Login{
     JButton eyeImg2 = new JButton(scaledIcon);
     JButton LoginBttn = new JButton("Login");
 
-    public Login(){
+    public LoginGUI(){
         userlabel.setLocation(20, 30);
         userlabel.setSize(70,40);
         usernameField.setLocation(100,30);
@@ -98,6 +98,6 @@ public class Login{
     }
 
     public static void main(String[] args){
-       new Login();
+       new LoginGUI();
     }
 }
