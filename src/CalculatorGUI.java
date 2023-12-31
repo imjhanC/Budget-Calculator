@@ -28,7 +28,7 @@ public class CalculatorGUI {
         frame.setLocationRelativeTo(null);
     }
 
-    private boolean checkIfUserHasPreviousTransaction(){
+    private boolean IfUserHasBudgetTarget(){
         return false;
     }
     public static void main(String[] args){
